@@ -85,7 +85,7 @@ def all_holidays_with_bbq(holiday_hash)
   #flateen to make single dimensonal array and compact to get rid of nil values
   all_holidays_with_bbq = []
   holiday_hash.each do |season, holiday|
-    season.each |holiday_day, items|
+    season.each do |holiday_day, items|
       if items == "BBQ"
         all_holidays_with_bbq << items
       end
