@@ -88,5 +88,6 @@ def all_holidays_with_bbq(holiday_hash)
     season.each |holiday_day, items|
       if items == "BBQ"
         all_holidays_with_bbq << items
+      end
   end
 end
