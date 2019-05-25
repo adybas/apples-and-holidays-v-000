@@ -84,11 +84,28 @@ def all_holidays_with_bbq(holiday_hash)
 
   #flateen to make single dimensonal array and compact to get rid of nil values
   all_holidays_with_bbq = []
-  holiday_hash.map do |season, holiday|
-    holiday.map do |holiday_day, items|
+  holiday_hash.each do |season, holiday|
+    holiday.each do |holiday_day, items|
       if items.include?("BBQ")
         all_holidays_with_bbq << items
       end
     end
-  end.flatten.compact
+  end
+  all_holidays_with_bbq
 end
+
+
+holiday_hash.map do |season, holidays|
+  holidays.map do |holiday, supplies|
+    holiday if supplies.include?("BBQ")
+    end
+  end.flatten.compact
+
+  bbq = []
+ holiday_hash.each do |season, holiday_data|
+   holiday_data.each do |holiday, data_array|
+     bbq << holiday if data_array.include?("BBQ")
+   end
+ end
+ bbq
+end	end
