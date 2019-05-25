@@ -89,5 +89,6 @@ def all_holidays_with_bbq(holiday_hash)
       if items == "BBQ"
         all_holidays_with_bbq << items
       end
+    end
   end
 end
